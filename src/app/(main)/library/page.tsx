@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
@@ -20,7 +20,9 @@ import {
   useClearHistory,
 } from '@/lib/queries';
 
-export default function LibraryPage() {
+// Dùng useSearchParams() → phải bọc trong <Suspense> (Next bắt buộc khi prerender/export).
+// Tách nội dung ra component con, page bọc Suspense ở dưới.
+function LibraryContent() {
   const user = useAuthStore((s) => s.user);
 
   // Mở đúng tab theo ?tab= (sidebar: Playlist/Yêu thích/Lịch sử) — và đổi tab
@@ -256,5 +258,20 @@ export default function LibraryPage() {
         </TabsContent>
       </Tabs>
     </div>
+  );
+}
+
+export default function LibraryPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="container py-6">
+          <h1 className="text-3xl font-bold">Thư viện của tôi</h1>
+          <p className="text-muted-foreground mt-1">Đang tải…</p>
+        </div>
+      }
+    >
+      <LibraryContent />
+    </Suspense>
   );
 }

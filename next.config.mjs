@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Build ra server standalone (.next/standalone/server.js) — DeployBox chạy bản này
+  output: 'standalone',
   reactStrictMode: true,
   images: {
     remotePatterns: [

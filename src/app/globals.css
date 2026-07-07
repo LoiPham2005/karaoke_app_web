@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 14% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 13% 12%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 13% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 343 100% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 258 90% 66%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 10% 16%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 10% 18%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 12% 18%;
+    --input: 240 12% 18%;
+    --ring: 343 100% 62%;
+
+    --radius: 0.75rem;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 240 14% 8%;
+    --card: 0 0% 98%;
+    --card-foreground: 240 14% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 14% 8%;
+    --primary: 343 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 258 90% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    --accent: 240 5% 94%;
+    --accent-foreground: 240 14% 8%;
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 343 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html,
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .gradient-primary {
+    background: linear-gradient(135deg, #ff3d71 0%, #8b5cf6 100%);
+  }
+  .gradient-card-hover {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--accent)) 100%
+    );
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, #ff3d71 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glass {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: hsl(var(--background) / 0.7);
+  }
+}
+
+/* Lyrics karaoke styles */
+.lyrics-line {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.5;
+}
+.lyrics-line.active {
+  opacity: 1;
+  transform: scale(1.1);
+  color: #ff3d71;
+  font-weight: 700;
+  text-shadow: 0 0 30px rgba(255, 61, 113, 0.5);
+}
+.lyrics-line.passed {
+  opacity: 0.3;
+}

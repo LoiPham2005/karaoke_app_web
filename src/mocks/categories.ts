@@ -1,0 +1,88 @@
+import { Category } from '@/types';
+
+export const categories: Category[] = [
+  {
+    slug: 'vpop',
+    name: 'V-Pop',
+    icon: '🎤',
+    gradient: 'from-pink-500 to-rose-500',
+    songCount: 1245,
+  },
+  {
+    slug: 'bolero',
+    name: 'Bolero',
+    icon: '🎷',
+    gradient: 'from-amber-500 to-orange-500',
+    songCount: 856,
+  },
+  {
+    slug: 'trutinh',
+    name: 'Trữ Tình',
+    icon: '🌸',
+    gradient: 'from-purple-500 to-pink-500',
+    songCount: 734,
+  },
+  {
+    slug: 'usuk',
+    name: 'US-UK',
+    icon: '🌍',
+    gradient: 'from-blue-500 to-cyan-500',
+    songCount: 2156,
+  },
+  {
+    slug: 'kpop',
+    name: 'K-Pop',
+    icon: '💜',
+    gradient: 'from-violet-500 to-purple-500',
+    songCount: 678,
+  },
+  {
+    slug: 'edm',
+    name: 'EDM',
+    icon: '🎧',
+    gradient: 'from-cyan-500 to-blue-500',
+    songCount: 543,
+  },
+  {
+    slug: 'rap',
+    name: 'Rap Việt',
+    icon: '🎙️',
+    gradient: 'from-emerald-500 to-teal-500',
+    songCount: 421,
+  },
+  {
+    slug: 'rock',
+    name: 'Rock',
+    icon: '🤘',
+    gradient: 'from-red-500 to-rose-600',
+    songCount: 312,
+  },
+  {
+    slug: 'nhactre',
+    name: 'Nhạc Trẻ',
+    icon: '✨',
+    gradient: 'from-fuchsia-500 to-pink-500',
+    songCount: 1567,
+  },
+  {
+    slug: 'remix',
+    name: 'Remix',
+    icon: '🔀',
+    gradient: 'from-indigo-500 to-purple-500',
+    songCount: 489,
+  },
+  {
+    slug: 'acoustic',
+    name: 'Acoustic',
+    icon: '🎸',
+    gradient: 'from-yellow-500 to-amber-500',
+    songCount: 287,
+  },
+  {
+    slug: 'cachmang',
+    name: 'Cách Mạng',
+    icon: '🇻🇳',
+    gradient: 'from-red-600 to-yellow-500',
+    songCount: 198,
+  },
+];
